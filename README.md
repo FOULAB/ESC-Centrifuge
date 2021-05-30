@@ -4,7 +4,8 @@ Timer 4 is configured to generate 1 PWM channel. No soft-PWM.
 
 ## Pins
 ```
-TIM4_CH1-TIM4_CH4 -> PB6, PB7, PB8, PB9
+TIM4_CH1-TIM4_CH4 -> PB6, PB7, PB8, PB9 (PWM only outputting on PB9 currently)
+Open Momentary Switch -> PA9
 ```  
 
 ## Requirements
