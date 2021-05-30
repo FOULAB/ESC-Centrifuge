@@ -12,7 +12,7 @@ Debian 9
 ```
 $ sudo apt install build-essential gcc-arm-none-eabi gdb-multiarch
 ```
-Get submodules (libopencm3 @3eff201a4bb3759a9c967a6f5e3fd0aad46dc5af)
+Get submodules (libopencm3 @d60d7802fd20821a766675545b6ef7a2207207a3)
 ```
 git submodule update --init --recursive
 ```
