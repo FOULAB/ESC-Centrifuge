@@ -92,7 +92,7 @@ int main(void) {
 	  }
       }
     
-    TIM_CCR1(TIM4) = speed;
+    TIM_CCR4(TIM4) = speed;
         
     _systick_delay(75); // milliseconds
   }

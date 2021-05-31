@@ -153,10 +153,10 @@ void init_pwm_TIM4(void) {
   rcc_periph_clock_enable(RCC_TIM4);
   
   //TIM4 CH1-CH4
-  gpio_set_mode(GPIOB, GPIO_MODE_OUTPUT_50_MHZ, GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO6);
+  /* gpio_set_mode(GPIOB, GPIO_MODE_OUTPUT_50_MHZ, GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO6); */
   /* gpio_set_mode(GPIOB, GPIO_MODE_OUTPUT_50_MHZ, GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO7); */
   /* gpio_set_mode(GPIOB, GPIO_MODE_OUTPUT_50_MHZ, GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO8); */
-  /* gpio_set_mode(GPIOB, GPIO_MODE_OUTPUT_50_MHZ, GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO9); */
+  gpio_set_mode(GPIOB, GPIO_MODE_OUTPUT_50_MHZ, GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO9);
   
   rcc_periph_reset_pulse(RST_TIM4);
   
@@ -169,21 +169,21 @@ void init_pwm_TIM4(void) {
   timer_set_period(TIM4, 18000);
 
   // PWM mode 1 (output high if CNT > CCR1)
-  timer_set_oc_mode(TIM4, TIM_OC1, TIM_OCM_PWM1);
+  /* timer_set_oc_mode(TIM4, TIM_OC1, TIM_OCM_PWM1); */
   /* timer_set_oc_mode(TIM4, TIM_OC2, TIM_OCM_PWM1); */
   /* timer_set_oc_mode(TIM4, TIM_OC3, TIM_OCM_PWM1); */
-  /* timer_set_oc_mode(TIM4, TIM_OC4, TIM_OCM_PWM1); */
+  timer_set_oc_mode(TIM4, TIM_OC4, TIM_OCM_PWM1);
   
-  timer_enable_oc_preload(TIM4, TIM_OC1);
+  /* timer_enable_oc_preload(TIM4, TIM_OC1); */
   /* timer_enable_oc_preload(TIM4, TIM_OC2); */
   /* timer_enable_oc_preload(TIM4, TIM_OC3); */
-  /* timer_enable_oc_preload(TIM4, TIM_OC4); */
+  timer_enable_oc_preload(TIM4, TIM_OC4);
   timer_enable_preload(TIM4);  
   
-  timer_enable_oc_output(TIM4, TIM_OC1);
+  /* timer_enable_oc_output(TIM4, TIM_OC1); */
   /* timer_enable_oc_output(TIM4, TIM_OC2); */
   /* timer_enable_oc_output(TIM4, TIM_OC3); */
-  /* timer_enable_oc_output(TIM4, TIM_OC4); */
+  timer_enable_oc_output(TIM4, TIM_OC4);
   
   timer_enable_counter(TIM4);
   return;	    
